@@ -90,7 +90,7 @@ properties:
       - c2-standard-16
       - c2-standard-30
       - c2-standard-60
-    description: The type of virtual machine to use.
+    description: The type of virtual machine to use. For information about the minimum recommended size, see the [LGTM Enterprise system requirements document](https://help.semmle.com/lgtm-enterprise/ops/lgtm-enterprise-LATEST-system-requirements.pdf).
 
   data-disk-size-gb:
     type: integer

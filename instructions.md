@@ -21,7 +21,7 @@ gcloud deployment-manager deployments create --project "$project" --template=con
 
 You can use the above command by copying and pasting it, editing the values for the initial administrator email and password. If you want to further customize your deployment, additional options can be added to the `--properties` flag:
 * `zone` - The Google Cloud zone to create resources in.
-* `virtual-machine-size` - The type of virtual machine to use.
+* `virtual-machine-size` - The type of virtual machine to use. For information about the minimum recommended size, see the [LGTM Enterprise system requirements document](https://help.semmle.com/lgtm-enterprise/ops/lgtm-enterprise-LATEST-system-requirements.pdf).
 * `data-disk-size-gb` - The data disk size for your LGTM Enterprise instance in gigabytes.
 * `administrator-email` - The email address for the initial LGTM Enterprise administrator account.
 * `administrator-password` - The password for the initial LGTM Enterprise administrator account. You should change this when you log in to LGTM Enterprise.
@@ -71,7 +71,7 @@ You can use the above command by copying and pasting it. If you want to customiz
 * `controller-deployment-name` - The deployment name for the LGTM Enterprise control pool that this worker group should connect to.
 * `worker-credentials` - This should be copied from the administrator interface of the LGTM Enterprise control pool.
 * `zone` - The Google Cloud zone to create resources in.
-* `virtual-machine-size` - The type of virtual machine to use.
+* `virtual-machine-size` - The type of virtual machine to use. For information about the minimum recommended size, see the [LGTM Enterprise system requirements document](https://help.semmle.com/lgtm-enterprise/ops/lgtm-enterprise-LATEST-system-requirements.pdf).
 * `copies` - The number of copies of this worker to create.
 * `general-workers` - The number of general workers to run on each machine in the group.
 * `on-demand-workers` - The number of on-demand workers to run on each machine in the group.
