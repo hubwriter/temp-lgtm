@@ -2,6 +2,7 @@
 ## Preparation
 Throughout this setup guide a few variables are used that are useful to set in advance. Set the Google Cloud project you want to deploy to, the zone to create any zonal resources in and a unique name for this deployment. If you are upgrading an existing installation, set these values to the same values used when LGTM was first set up.
 
+Using the Cloud Shell command line, set values for the `project`, `zone` and `deployment` variables. For example:
 ```console
 project="my-project"
 zone="us-central1-a"
