@@ -87,3 +87,8 @@ The controller can then be upgraded by re-deploying the template. If you specifi
 gcloud deployment-manager deployments update --project "$project" --template worker.py "$deployment-$worker_group" \
 	--properties "zone:$zone,controller-deployment-name:$deployment,$worker_credentials"
 ```
+
+## Finish
+That's it. LGTM Enterprise should now be installed or upgraded. Click _Finish_ below to close this tutorial.
+
+If you need to open it again, you can always find the link to do so on the [LGTM Enterprise releases page](https://github.com/Semmle/lgtm-enterprise/releases/).
