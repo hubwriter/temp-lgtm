@@ -47,7 +47,7 @@ Next the deployment must be removed, abandoning, but not removing the old resour
 gcloud deployment-manager deployments delete --project "$project" --delete-policy abandon "$deployment"
 ```
 
-The control pool can then be upgraded by re-deploying the template. If you specified any properties when the instance was first created, provide them again here.
+You can now upgrade the control pool by redeploying the template. If you specified any properties when the instance was first created, provide them again here.
 ```console
 gcloud deployment-manager deployments create --project "$project" --template controller.py --properties zone:$zone "$deployment"
 ```
