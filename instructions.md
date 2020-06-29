@@ -67,7 +67,7 @@ gcloud deployment-manager deployments create --project "$project" --template=wor
 	--properties "zone:$zone,controller-deployment-name:$deployment,$worker_credentials"
 ```
 
-The `--properties` flag can be used to provide a variety of options to customize your deployment:
+You can use the above command by copying and pasting it. If you want to customize your deployment, you can add more settings to the `--properties` flag:
 * `controller-deployment-name` - The deployment name for the LGTM Enterprise control pool deployment that this worker group should connect to.
 * `worker-credentials` - This should be copied from the administrator interface of the LGTM Enterprise control pool.
 * `zone` - The Google Cloud zone to create resources in.
