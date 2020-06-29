@@ -105,7 +105,7 @@ properties:
   administrator-password:
     type: string
     default: ""
-    description: The password for the initial LGTM Enterprise administrator account. It is recommended that you change this after the instance has booted.
+    description: The password for the initial LGTM Enterprise administrator account. You should change this when you log in to LGTM Enterprise.
 
   general-workers:
     type: integer

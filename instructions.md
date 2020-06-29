@@ -24,7 +24,7 @@ You can use the above command by copying and pasting it, editing the values for 
 * `virtual-machine-size` - The type of virtual machine to use.
 * `data-disk-size-gb` - The data disk size for your LGTM Enterprise instance in gigabytes.
 * `administrator-email` - The email address for the initial LGTM Enterprise administrator account.
-* `administrator-password` - The password for the initial LGTM Enterprise administrator account. It is recommended that you change this after the instance has booted.
+* `administrator-password` - The password for the initial LGTM Enterprise administrator account. You should change this when you log in to LGTM Enterprise.
 * `general-workers` - The number of general workers to run on the control pool.
 * `on-demand-workers` - The number of on-demand workers to run on the control pool.
 * `query-workers` - The number of query workers to run on the control pool.
