@@ -32,7 +32,7 @@ You can use the above command by copying and pasting it, editing the values for 
 * `manifest-password` - A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
 ### Upgrading the LGTM Enterprise control pool
-When upgrading, it is important that you use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:
+When upgrading, you must use the same properties you used when you first deployed LGTM. You can see the properties you used previously by running:
 ```
 gcloud deployment-manager manifests describe --project "$project" --deployment "$deployment" --format "value(config.content)" "$(gcloud deployment-manager deployments list --project "$project" --filter "name=$deployment" --format "value(manifest)")"
 ```
