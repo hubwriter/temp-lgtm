@@ -80,7 +80,7 @@ You can use the above command by copying and pasting it. If you want to customiz
 * `manifest-password` - A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
 ### Upgrading an LGTM Enterprise worker group
-When upgrading, you likely want to use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:
+When upgrading, you will probably want to use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:
 ```
 gcloud deployment-manager manifests describe --project "$project" --deployment "$deployment-$worker_group" --format "value(config.content)" "$(gcloud deployment-manager deployments list --project "$project" --filter "name=$deployment-$worker_group" --format "value(manifest)")"
 ```
