@@ -61,7 +61,7 @@ worker_credentials='worker-credentials: "H4sIAAAAAAAAAI...=="'
 ```
 
 ### Creating a new LGTM Enterprise worker group
-A new LGTM Enterprise worker group can be created using the `worker.py` template.
+You can create a new LGTM Enterprise worker group by using the `worker.py` template.
 ```console
 gcloud deployment-manager deployments create --project "$project" --template=worker.py "$deployment-$worker_group" \
 	--properties "zone:$zone,controller-deployment-name:$deployment,$worker_credentials"
