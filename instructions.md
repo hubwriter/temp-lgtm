@@ -60,7 +60,7 @@ worker_group="workers"
 worker_credentials='worker-credentials: "H4sIAAAAAAAAAI...=="'
 ```
 
-### Creating a New LGTM Enterprise Worker Group
+### Creating a new LGTM Enterprise worker group
 A new LGTM Enterprise worker group can be created using the `worker.py` template.
 ```console
 gcloud deployment-manager deployments create --project "$project" --template=worker.py "$deployment-$worker_group" \
@@ -79,7 +79,7 @@ The `--properties` flag can be used to provide a variety of options to customize
 * `worker-environment` - A dictionary of environment variables to use for the workers.
 * `manifest-password` - A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
-### Upgrading an Existing LGTM Enterprise Worker Group
+### Upgrading an LGTM Enterprise worker group
 When upgrading, you likely want to use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:
 ```
 gcloud deployment-manager manifests describe --project "$project" --deployment "$deployment-$worker_group" --format "value(config.content)" "$(gcloud deployment-manager deployments list --project "$project" --filter "name=$deployment-$worker_group" --format "value(manifest)")"
