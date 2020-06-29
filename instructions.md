@@ -85,7 +85,7 @@ When upgrading, you will probably want to use the same properties as when you fi
 gcloud deployment-manager manifests describe --project "$project" --deployment "$deployment-$worker_group" --format "value(config.content)" "$(gcloud deployment-manager deployments list --project "$project" --filter "name=$deployment-$worker_group" --format "value(manifest)")"
 ```
 
-The control pool can then be upgraded by re-deploying the template. If you specified any properties when the instance was first created, provide them again here.
+You can now upgrade the worker group by redeploying the template. If you specified any properties when the instance was first created, provide them again here.
 ```console
 gcloud deployment-manager deployments update --project "$project" --template worker.py "$deployment-$worker_group" \
 	--properties "zone:$zone,controller-deployment-name:$deployment,$worker_credentials"
