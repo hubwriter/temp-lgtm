@@ -55,6 +55,8 @@ gcloud deployment-manager deployments create --project "$project" --template con
 ## Workers
 Workers are managed as instance groups. All workers in an instance group are provisioned identically and groups can be scaled up and down depending on your needs. Decide a name for your worker group, or if you are upgrading an existing group use the same name you used to create the group.
 
+Set the worker_credentials value by copying and pasting from the _Infrastructure > Worker management_ tab of the LGTM administration interface.
+
 ```console
 worker_group="workers"
 worker_credentials='worker-credentials: "H4sIAAAAAAAAAI...=="'
