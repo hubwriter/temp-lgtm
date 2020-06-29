@@ -68,7 +68,7 @@ gcloud deployment-manager deployments create --project "$project" --template=wor
 ```
 
 You can use the above command by copying and pasting it. If you want to customize your deployment, you can add more settings to the `--properties` flag:
-* `controller-deployment-name` - The deployment name for the LGTM Enterprise control pool deployment that this worker group should connect to.
+* `controller-deployment-name` - The deployment name for the LGTM Enterprise control pool that this worker group should connect to.
 * `worker-credentials` - This should be copied from the administrator interface of the LGTM Enterprise control pool.
 * `zone` - The Google Cloud zone to create resources in.
 * `virtual-machine-size` - The type of virtual machine to use.
