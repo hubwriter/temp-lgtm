@@ -19,7 +19,7 @@ gcloud deployment-manager deployments create --project "$project" --template=con
 	--properties "zone:$zone,administrator-email:email@example.com,administrator-password:MySuperSecretPassword"
 ```
 
-The `--properties` flag can be used to provide a variety of options to customize your deployment:
+You can use the above command by copying and pasting it, editing the values for the initial administrator email and password. If you want to further customize your deployment, additional options can be added to the `--properties` flag:
 * `zone` - The Google Cloud zone to create resources in.
 * `virtual-machine-size` - The type of virtual machine to use.
 * `data-disk-size-gb` - The data disk size for your LGTM Enterprise instance in gigabytes.
