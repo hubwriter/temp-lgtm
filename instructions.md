@@ -13,7 +13,7 @@ After you have done this, click _Start_ to to find out how to create or upgrade 
 
 ## Control pool
 ### Creating a new LGTM Enterprise control pool
-A new LGTM Enterprise control pool can be created using the `controller.py` template.
+You can create a new LGTM Enterprise control pool machine by using the `controller.py` template.
 ```console
 gcloud deployment-manager deployments create --project "$project" --template=controller.py "$deployment" \
 	--properties "zone:$zone,administrator-email:email@example.com,administrator-password:MySuperSecretPassword"
