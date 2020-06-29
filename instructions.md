@@ -29,7 +29,7 @@ You can use the above command by copying and pasting it, editing the values for 
 * `on-demand-workers` - The number of on-demand workers to run on the control pool.
 * `query-workers` - The number of query workers to run on the control pool.
 * `worker-environment` - A JSON dictionary of environment variables to use for the workers.
-* `manifest-password` - A password used to encrypt the LGTM manifest. If not specified a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
+* `manifest-password` - A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
 ### Upgrading an Existing LGTM Enterprise Control Pool
 When upgrading, it is important that you use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:
@@ -77,7 +77,7 @@ The `--properties` flag can be used to provide a variety of options to customize
 * `on-demand-workers` - The number of on-demand workers to run on each machine in the group.
 * `query-workers` - The number of query workers to run on each machine in the group.
 * `worker-environment` - A dictionary of environment variables to use for the workers.
-* `manifest-password` - A password used to encrypt the LGTM manifest. If not specified a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
+* `manifest-password` - A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
 ### Upgrading an Existing LGTM Enterprise Worker Group
 When upgrading, you likely want to use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:

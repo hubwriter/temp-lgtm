@@ -130,4 +130,4 @@ properties:
   manifest-password:
     type: string
     default: ""
-    description: A password used to encrypt the LGTM manifest. If not specified a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
+    description: A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
