@@ -11,9 +11,9 @@ deployment="lgtm"
 
 After you have done this, click _Start_ to to find out how to create or upgrade a control pool (step 1), or create or upgrade a worker group (step 2).
 
-## Controller
-### Creating a New LGTM Enterprise Controller
-A new LGTM Enterprise controller machine can be created using the `controller.py` template.
+## Control pool
+### Creating a new LGTM Enterprise control pool
+A new LGTM Enterprise control pool can be created using the `controller.py` template.
 ```console
 gcloud deployment-manager deployments create --project "$project" --template=controller.py "$deployment" \
 	--properties "zone:$zone,administrator-email:email@example.com,administrator-password:MySuperSecretPassword"
@@ -25,19 +25,19 @@ The `--properties` flag can be used to provide a variety of options to customize
 * `data-disk-size-gb` - The data disk size for your LGTM Enterprise instance in gigabytes.
 * `administrator-email` - The email address for the initial LGTM Enterprise administrator account.
 * `administrator-password` - The password for the initial LGTM Enterprise administrator account. It is recommended that you change this after the instance has booted.
-* `general-workers` - The number of general workers to run on the controller.
-* `on-demand-workers` - The number of on-demand workers to run on the controller.
-* `query-workers` - The number of query workers to run on the controller.
+* `general-workers` - The number of general workers to run on the control pool.
+* `on-demand-workers` - The number of on-demand workers to run on the control pool.
+* `query-workers` - The number of query workers to run on the control pool.
 * `worker-environment` - A JSON dictionary of environment variables to use for the workers.
 * `manifest-password` - A password used to encrypt the LGTM manifest. If not specified a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
-### Upgrading an Existing LGTM Enterprise Controller
+### Upgrading an Existing LGTM Enterprise Control Pool
 When upgrading, it is important that you use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:
 ```
 gcloud deployment-manager manifests describe --project "$project" --deployment "$deployment" --format "value(config.content)" "$(gcloud deployment-manager deployments list --project "$project" --filter "name=$deployment" --format "value(manifest)")"
 ```
 
-To update an existing LGTM Enterprise controller the old virtual machine and OS disk must be removed.
+To update an existing LGTM Enterprise control pool the old virtual machine and OS disk must be removed.
 ```
 gcloud compute instances delete --project "$project" --zone "$zone" "$deployment" --keep-disks data
 ```
@@ -47,7 +47,7 @@ Next the deployment must be removed, abandoning, but not removing the old resour
 gcloud deployment-manager deployments delete --project "$project" --delete-policy abandon "$deployment"
 ```
 
-The controller can then be upgraded by re-deploying the template. If you specified any properties when the instance was first created, provide them again here.
+The control pool can then be upgraded by re-deploying the template. If you specified any properties when the instance was first created, provide them again here.
 ```console
 gcloud deployment-manager deployments create --project "$project" --template controller.py --properties zone:$zone "$deployment"
 ```
@@ -68,8 +68,8 @@ gcloud deployment-manager deployments create --project "$project" --template=wor
 ```
 
 The `--properties` flag can be used to provide a variety of options to customize your deployment:
-* `controller-deployment-name` - The deployment name for the LGTM Enterprise controller deployment that this worker group should connect to.
-* `worker-credentials` - This should be copied from the administrator interface of the LGTM Enterprise controller.
+* `controller-deployment-name` - The deployment name for the LGTM Enterprise control pool deployment that this worker group should connect to.
+* `worker-credentials` - This should be copied from the administrator interface of the LGTM Enterprise control pool.
 * `zone` - The Google Cloud zone to create resources in.
 * `virtual-machine-size` - The type of virtual machine to use.
 * `copies` - The number of copies of this worker to create.
@@ -85,7 +85,7 @@ When upgrading, you likely want to use the same properties as when you first dep
 gcloud deployment-manager manifests describe --project "$project" --deployment "$deployment-$worker_group" --format "value(config.content)" "$(gcloud deployment-manager deployments list --project "$project" --filter "name=$deployment-$worker_group" --format "value(manifest)")"
 ```
 
-The controller can then be upgraded by re-deploying the template. If you specified any properties when the instance was first created, provide them again here.
+The control pool can then be upgraded by re-deploying the template. If you specified any properties when the instance was first created, provide them again here.
 ```console
 gcloud deployment-manager deployments update --project "$project" --template worker.py "$deployment-$worker_group" \
 	--properties "zone:$zone,controller-deployment-name:$deployment,$worker_credentials"

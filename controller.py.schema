@@ -110,17 +110,17 @@ properties:
   general-workers:
     type: integer
     default: 1
-    description: The number of general workers to run on the controller.
+    description: The number of general workers to run on the control pool.
 
   on-demand-workers:
     type: integer
     default: 0
-    description: The number of on-demand workers to run on the controller.
+    description: The number of on-demand workers to run on the control pool.
 
   query-workers:
     type: integer
     default: 1
-    description: The number of query workers to run on the controller.
+    description: The number of query workers to run on the control pool.
 
   worker-environment:
     type: object
