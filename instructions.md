@@ -31,7 +31,7 @@ You can use the above command by copying and pasting it, editing the values for 
 * `worker-environment` - A JSON dictionary of environment variables to use for the workers.
 * `manifest-password` - A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
-### Upgrading an Existing LGTM Enterprise Control Pool
+### Upgrading the LGTM Enterprise control pool
 When upgrading, it is important that you use the same properties as when you first deployed LGTM. You can see the properties you used previously by running:
 ```
 gcloud deployment-manager manifests describe --project "$project" --deployment "$deployment" --format "value(config.content)" "$(gcloud deployment-manager deployments list --project "$project" --filter "name=$deployment" --format "value(manifest)")"
