@@ -4,8 +4,8 @@ Throughout this setup guide a few variables are used that are useful to set in a
 
 ```console
 project="my-project"
-deployment="lgtm"
 zone="us-central1-a"
+deployment="lgtm"
 ```
 
 ## Controller
