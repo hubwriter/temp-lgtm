@@ -9,6 +9,8 @@ zone="us-central1-a"
 deployment="lgtm"
 ```
 
+After you have done this, click _Start_ to to find out how to create or upgrade a control pool (step 1), or create or upgrade a worker group (step 2).
+
 ## Controller
 ### Creating a New LGTM Enterprise Controller
 A new LGTM Enterprise controller machine can be created using the `controller.py` template.
