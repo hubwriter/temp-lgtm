@@ -90,7 +90,7 @@ def generate_config(context):
                     "zone": zone,
                     "baseInstanceName": deployment,
                     "instanceTemplate": "$(ref." + instance_template_name + ".selfLink)",
-                    "targetSize": 1,
+                    "targetSize": context.properties["copies"],
                 },
             },
         ],
