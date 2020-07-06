@@ -113,7 +113,7 @@ def generate_config(context):
                 "properties": {
                     "zone": zone,
                     "machineType": "zones/" + zone + "/machineTypes/" + context.properties["virtual-machine-size"],
-                    "hostname": deployment + "." + zone + ".c.semmle-oss-testing.internal",
+                    "hostname": deployment + "." + zone + ".c." + context.env["project"] + ".internal",
                     "disks": [
                         {
                             "deviceName": "boot",
