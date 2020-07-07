@@ -1,0 +1,150 @@
+info:
+  title: LGTM Enterprise Worker Group
+  author: GitHub
+  description: Creates an LGTM Enterprise worker group.
+
+imports:
+  - path: image.txt
+  - path: worker.py
+
+required:
+  - controller-deployment-name
+  - worker-credentials
+
+properties:
+  controller-deployment-name:
+    type: string
+    description: The deployment name for the LGTM Enterprise controller deployment that this worker group should connect to.
+
+  worker-credentials:
+    type: string
+    default: ""
+    description: This should be copied from the administrator interface of the LGTM Enterprise controller.
+
+  zone:
+    type: string
+    default: us-central1-a
+    description: The Google Cloud zone to create resources in.
+
+  virtual-machine-size:
+    type: string
+    default: n2-standard-2
+    enum:
+      - e2-standard-2
+      - e2-standard-4
+      - e2-standard-8
+      - e2-standard-16
+      - e2-highmem-2
+      - e2-highmem-4
+      - e2-highmem-8
+      - e2-highmem-16
+      - e2-highcpu-4
+      - e2-highcpu-8
+      - e2-highcpu-16
+      - n2-standard-2
+      - n2-standard-4
+      - n2-standard-8
+      - n2-standard-16
+      - n2-standard-32
+      - n2-standard-48
+      - n2-standard-64
+      - n2-standard-80
+      - n2-highmem-2
+      - n2-highmem-4
+      - n2-highmem-8
+      - n2-highmem-16
+      - n2-highmem-32
+      - n2-highmem-48
+      - n2-highmem-64
+      - n2-highmem-80
+      - n2-highcpu-4
+      - n2-highcpu-8
+      - n2-highcpu-16
+      - n2-highcpu-32
+      - n2-highcpu-48
+      - n2-highcpu-64
+      - n2-highcpu-80
+      - n2d-standard-2
+      - n2d-standard-4
+      - n2d-standard-8
+      - n2d-standard-16
+      - n2d-standard-32
+      - n2d-standard-64
+      - n2d-standard-80
+      - n2d-standard-96
+      - n2d-standard-128
+      - n2d-standard-224
+      - n2d-highmem-2
+      - n2d-highmem-4
+      - n2d-highmem-8
+      - n2d-highmem-16
+      - n2d-highmem-32
+      - n2d-highmem-48
+      - n2d-highmem-64
+      - n2d-highmem-80
+      - n2d-highmem-96
+      - n2d-highcpu-4
+      - n2d-highcpu-8
+      - n2d-highcpu-16
+      - n2d-highcpu-32
+      - n2d-highcpu-48
+      - n2d-highcpu-64
+      - n2d-highcpu-80
+      - n2d-highcpu-96
+      - n2d-highcpu-128
+      - n2d-highcpu-224
+      - n1-standard-2
+      - n1-standard-4
+      - n1-standard-8
+      - n1-standard-16
+      - n1-standard-32
+      - n1-standard-64
+      - n1-standard-96
+      - n1-highmem-2
+      - n1-highmem-4
+      - n1-highmem-8
+      - n1-highmem-16
+      - n1-highmem-32
+      - n1-highmem-64
+      - n1-highmem-96
+      - n1-highcpu-8
+      - n1-highcpu-16
+      - n1-highcpu-32
+      - n1-highcpu-64
+      - n1-highcpu-96
+      - c2-standard-4
+      - c2-standard-8
+      - c2-standard-16
+      - c2-standard-30
+      - c2-standard-60
+    description: The type of virtual machine to use. For information about the recommended size, see the [LGTM Enterprise installation guide](https://help.semmle.com/lgtm-enterprise/ops/lgtm-enterprise-LATEST-installation-guide.pdf).
+
+  copies:
+    type: integer
+    default: 1
+    description: The number of copies of this worker to create.
+
+  general-workers:
+    type: integer
+    default: 1
+    description: The number of general workers to run on each machine in the group.
+
+  on-demand-workers:
+    type: integer
+    default: 0
+    description: The number of on-demand workers to run on each machine in the group.
+
+  query-workers:
+    type: integer
+    default: 1
+    description: The number of query workers to run on each machine in the group.
+
+  worker-environment:
+    type: object
+    default: {}
+    description: A dictionary of environment variables to use for the workers.
+
+  manifest-password:
+    type: string
+    default: ""
+    description: A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
