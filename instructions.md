@@ -31,6 +31,11 @@ You can use the above command by copying and pasting it, editing the values for 
 * `worker-environment` - A JSON dictionary of environment variables to use for the workers.
 * `manifest-password` - A password used to encrypt the LGTM manifest. If you don't specify one a password will be generated and stored in `/data/lgtm-releases/.manifest-password`.
 
+You can obtain the IP address of the created LGTM Enterprise instance by running:
+```
+gcloud compute instances list --project "$project" --filter "name=$deployment"
+```
+
 ### Upgrading the LGTM Enterprise control pool
 When upgrading, you must use the same properties you used when you first deployed LGTM. You can see the properties you used previously by running:
 ```
