@@ -1,4 +1,6 @@
 import json
+import random
+import string
 
 _IMAGE = open("image.txt", "r").read().strip()
 
@@ -8,7 +10,8 @@ def generate_config(context):
     controller_deployment = context.properties["controller-deployment-name"]
     deployment = context.env["deployment"]
     network_name = controller_deployment + "-network"
-    instance_template_name = deployment + "-template"
+    instance_template_id = "".join(random.choice(string.ascii_lowercase + string.digits) for _ in range(4))
+    instance_template_name = deployment + "-template-" + instance_template_id
     instance_group_manager_name = deployment + "-group"
     return {
         "resources": [
